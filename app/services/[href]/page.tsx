@@ -20,7 +20,7 @@ const ServicePage = () => {
 
   const sendWhatsAppMessage = () => {
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/00967781814365?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/+967781814365?text=${encodedMessage}`, '_blank');
   };
 
   return (
