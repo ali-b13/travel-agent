@@ -40,7 +40,7 @@ const ImageSwiper = () => {
       autoplay={{ delay: 5000 }}
       loop
       pagination={{ clickable: true }}
-      className="w-full h-[80vh] rounded-xl mx-4 p-4 font-sans"
+      className="w-full h-[80vh] rounded-sm mx-4 p-4 font-sans"
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative">

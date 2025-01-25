@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { servicesItems } from '@/lib/constant';
@@ -10,18 +9,14 @@ import WhatsAppButton from '@/app/components/WhatsAppButton';
 const ServicePage = () => {
   const params = useParams();
   const href = params.href as string;
-  
-  // First: Call hooks unconditionally
-  const [message, setMessage] = useState('');
 
   // Then: Find service and handle not found
   const service = servicesItems.find(service => service.href === `/services/${href}`);
   if (!service) {
-    notFound();
+   return notFound();
   }
 
-  // Now set initial message after service check
-  setMessage(`مرحبا، أريد الاستعلام عن ${service.title}`);
+  const message = `مرحبا، أريد الاستعلام عن ${service.title}`;
 
   const sendWhatsAppMessage = () => {
     const encodedMessage = encodeURIComponent(message);
@@ -90,13 +85,7 @@ const ServicePage = () => {
         {/* WhatsApp Booking */}
         <div className="bg-white p-6 rounded-xl shadow-sm">
           <div className="space-y-4">
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="resize-none w-full h-24 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              placeholder="أدخل رسالتك..."
-            />
-            
+           
             <button
               onClick={sendWhatsAppMessage}
               className="w-full bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-medium text-lg transition-all flex items-center justify-center gap-2"
