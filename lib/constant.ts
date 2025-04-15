@@ -28,6 +28,10 @@ export const navLinks=[
       {
         title:"تواصل معنا",
          href:"/contact"
+      },
+      {
+        title:"الاعلانات",
+         href:"/ads"
       }
 ]
 export interface ServiceItem {
