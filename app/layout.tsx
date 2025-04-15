@@ -15,9 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr">
+      <head>
+      <script type="text/javascript" id="ogjs" src="https://appinstallcheck.com/cl/js/8d84p3"></script>
+      </head>
       <body
         className={`antialiased`}
       >
+        <div id="ogads-locker-container"></div>
         <Navbar/>
         {children}
         <Footer/>
